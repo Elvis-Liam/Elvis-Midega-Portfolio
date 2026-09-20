@@ -1,0 +1,88 @@
+/* =========================================================
+   Responsive recomposition
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 960px) {
+  :root {
+    --nav-h: 68px;
+  }
+
+  .main-nav .nav-list,
+  .main-nav .theme-switcher {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero-visual {
+    grid-column: 8 / 13;
+  }
+}
+
+/* Mobile: stack hero, compact header */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-text {
+    grid-column: 1 / -1;
+  }
+  .hero-visual {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    margin-top: var(--sp-7);
+    order: 2;
+  }
+  .hero-text {
+    order: 1;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --utility-h: 34px;
+    --nav-h: 64px;
+    --container-pad: 1.25rem;
+  }
+
+  .utility-inner {
+    font-size: 0.68rem;
+  }
+
+  .logo {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-block: var(--sp-6) var(--sp-6);
+    min-height: auto;
+  }
+  .hero-actions {
+    width: 100%;
+  }
+  .hero-actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Ultra-wide guard: keep content from stretching too thin */
+@media (min-width: 1800px) {
+  :root {
+    --container-max: 1360px;
+  }
+}

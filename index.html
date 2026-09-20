@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  try {
+    var pref = localStorage.getItem('elvis-theme') || 'system';
+    var resolved = pref === 'system'
+      ? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+      : pref;
+    document.documentElement.setAttribute('data-theme', resolved);
+    document.documentElement.setAttribute('data-theme-pref', pref);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elvis Midega | Software Engineer & Technical Writer</title>
+<meta name="description" content="Portfolio of Elvis Midega, a software engineer and technical writer in Nairobi, Kenya, working across software engineering, cryptography, artificial intelligence, data and emerging technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="entrance" id="entrance" aria-hidden="true">
+  <p class="entrance-name">Elvis Midega</p>
+  <p class="entrance-role">Software Engineer / Technical Writer</p>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="utility-bar">
+    <div class="utility-inner">
+      <span class="utility-location">Nairobi, Kenya</span>
+      <span class="utility-clock" id="localClock">
+        <span id="clockTime">00:00:00</span> <span class="utility-tz">EAT</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <div class="nav-inner">
+      <a href="#home" class="logo">Elvis Midega</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#tech-stack" class="nav-link" data-section="tech-stack">Tech Stack</a></li>
+          <li><a href="#vision" class="nav-link" data-section="vision">Vision</a></li>
+          <li><a href="#mission" class="nav-link" data-section="mission">Mission</a></li>
+          <li><a href="#philosophy" class="nav-link" data-section="philosophy">Philosophy</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+
+        <div class="theme-switcher" role="group" aria-label="Theme">
+          <button type="button" class="theme-btn" data-theme-choice="dark">Dark</button>
+          <button type="button" class="theme-btn" data-theme-choice="light">Light</button>
+          <button type="button" class="theme-btn" data-theme-choice="system">System</button>
+        </div>
+      </nav>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav-list">
+      <li><a href="#home" class="mobile-nav-link" data-section="home">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link" data-section="about">About</a></li>
+      <li><a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#tech-stack" class="mobile-nav-link" data-section="tech-stack">Tech Stack</a></li>
+      <li><a href="#vision" class="mobile-nav-link" data-section="vision">Vision</a></li>
+      <li><a href="#mission" class="mobile-nav-link" data-section="mission">Mission</a></li>
+      <li><a href="#philosophy" class="mobile-nav-link" data-section="philosophy">Philosophy</a></li>
+      <li><a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="theme-switcher theme-switcher-mobile" role="group" aria-label="Theme">
+    <button type="button" class="theme-btn" data-theme-choice="dark">Dark</button>
+    <button type="button" class="theme-btn" data-theme-choice="light">Light</button>
+    <button type="button" class="theme-btn" data-theme-choice="system">System</button>
+  </div>
+</div>
+
+<main id="main">
+
+  <section id="home" class="section hero" data-section="home" aria-label="Home">
+    <div id="vantaBg" class="vanta-bg" aria-hidden="true"></div>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="hero-page mono">Page | 01</p>
+
+        <p class="signature hero-signature">Elvis Midega</p>
+
+        <h1 class="hero-title">
+          <span class="line">MY</span>
+          <span class="line">PORTFOLIO</span>
+        </h1>
+
+        <p class="signature hero-subtitle">Software Engineer and Technical Writer</p>
+
+        <p class="hero-lead">Practical, secure and intelligent digital solutions.</p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+            <span class="btn-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+              </svg>
+            </span>
+          </a>
+          <a href="work-with-me.html" class="btn btn-secondary">
+            Let&rsquo;s Work Together
+            <span class="btn-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="hero-visual">
+        <img class="portrait-img" src="assets/profile.jpg" alt="Portrait of Elvis Midega" width="1600" height="2000" loading="eager">
+        <figcaption class="portrait-placeholder">
+          <span>assets/profile.jpg</span>
+          <span>Recommended 1600 &times; 2000px</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Phase 2 and later: Introduction, About Me, More Than a Portfolio,
+       Vision, Mission, Philosophy, Projects, Tech Stack, Skills, Dev
+       Quotes and Contact sections are added here. -->
+
+</main>
+
+<script src="js/theme.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
