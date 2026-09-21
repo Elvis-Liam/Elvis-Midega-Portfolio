@@ -132,9 +132,9 @@
      Portrait / image fallback frames
      --------------------------------------------------------- */
   function initImageFallbacks() {
-    document.querySelectorAll('.portrait-img').forEach(function (img) {
+    document.querySelectorAll('.portrait-img, .project-frame img').forEach(function (img) {
       img.addEventListener('error', function () {
-        var frame = img.closest('.hero-visual, .portrait-frame');
+        var frame = img.closest('.hero-visual, .portrait-frame, .project-frame');
         if (frame) frame.classList.add('is-missing');
       });
     });

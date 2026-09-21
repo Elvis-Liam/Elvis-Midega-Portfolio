@@ -70,6 +70,18 @@
   }
 }
 
+/* Small phones: section-head's trailing page label has nowhere
+   left to go next to longer headings, drop it rather than overflow */
+@media (max-width: 480px) {
+  .section-head {
+    flex-wrap: wrap;
+    row-gap: var(--sp-2);
+  }
+  .section-head .page-label {
+    display: none;
+  }
+}
+
 /* Small phones */
 @media (max-width: 380px) {
   .hero-actions {
@@ -84,5 +96,65 @@
 @media (min-width: 1800px) {
   :root {
     --container-max: 1360px;
+  }
+}
+
+/* Phase 2: editorial split grid stacks in reading order */
+@media (max-width: 900px) {
+  .split-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+  .split-main,
+  .split-aside {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Phase 2: what drives me collapses to one column */
+@media (max-width: 680px) {
+  .drives-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phase 3: project entries stack as image, then text */
+@media (max-width: 900px) {
+  .project-entry,
+  .project-entry.is-reversed {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .project-frame,
+  .project-entry.is-reversed .project-frame,
+  .project-text,
+  .project-entry.is-reversed .project-text {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Phase 4: tech stack collapses to 3x3 on tablet and mobile alike */
+@media (max-width: 900px) {
+  .stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-grid .stack-cell:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Phase 4: footer columns stack with 32px gaps */
+@media (max-width: 680px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
   }
 }
