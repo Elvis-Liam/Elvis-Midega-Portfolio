@@ -195,6 +195,13 @@ h1, h2, h3, p { margin: 0; }
   flex-shrink: 0;
 }
 
+/* Heading sits between two equal flexible rules instead of
+   directly after the index, so it reads as centered between the
+   index and the page label rather than left-anchored. */
+.section-head--centered .section-heading {
+  text-align: center;
+}
+
 .mono {
   font-family: var(--font-mono);
 }
@@ -707,10 +714,12 @@ h1, h2, h3, p { margin: 0; }
 
 /* Used where a genuine 7/5 split would leave an empty, unbalanced
    right column: About Me runs its long text across roughly 8
-   columns' worth of width instead, still left-aligned with the
-   section head above it. */
+   columns' worth of width instead. Centered rather than pinned to
+   the section head's left edge, so it doesn't leave a large empty
+   gap on the right once the container is wider than its cap. */
 .content-wide {
   max-width: 66ch;
+  margin-inline: auto;
 }
 
 /* =========================================================

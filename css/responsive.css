@@ -130,6 +130,7 @@
   .project-text,
   .project-entry.is-reversed .project-text {
     grid-column: 1 / -1;
+    grid-row: auto;
   }
 }
 
